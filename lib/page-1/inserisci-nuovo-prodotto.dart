@@ -3,10 +3,11 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
-import 'package:myapp/page-1/le-mie-ricette.dart';
-import 'package:myapp/page-1/sign-in.dart';
-import 'package:myapp/page-1/home.dart';
-import 'package:myapp/page-1/i-tuoi-prodotti.dart';
+import 'package:myapp/view/HomeView.dart';
+import 'package:myapp/view/ProdottiView.dart';
+import 'package:myapp/view/RicetteView.dart';
+import 'package:myapp/view/RaccolteView.dart';
+
 
 class InserisciNuovoProdotto extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -44,7 +45,7 @@ class InserisciNuovoProdotto extends StatelessWidget {
                   Navigator.pop(context); // Chiudi il Navigation Drawer
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()), // Sostituisci con il nome del tuo widget "RicettarioPage"
+                    MaterialPageRoute(builder: (context) => HomeView()), // Sostituisci con il nome del tuo widget "RicettarioPage"
                   );
                 },
               ),
@@ -56,7 +57,7 @@ class InserisciNuovoProdotto extends StatelessWidget {
                   // Naviga alla pagina "I miei prodotti"
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ITuoiProdotti()), // Sostituisci con il nome del tuo widget "RicettarioPage"
+                    MaterialPageRoute(builder: (context) => ProdottiView()), // Sostituisci con il nome del tuo widget "RicettarioPage"
                   );
                 },
               ),
@@ -68,19 +69,7 @@ class InserisciNuovoProdotto extends StatelessWidget {
                   // Naviga alla pagina "Ricettario"
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LeMieRicette()), // Sostituisci con il nome del tuo widget "RicettarioPage"
-                  );
-                },
-              ),
-              ListTile(
-                title: Text('Accedi'),
-                onTap: () {
-                  // Codice per navigare alla pagina "Accedi"
-                  Navigator.pop(context); // Chiudi il Navigation Drawer
-                  // Naviga alla pagina "Sign in"
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SignIn()), // Sostituisci con il nome del tuo widget "RicettarioPage"
+                    MaterialPageRoute(builder: (context) => RicetteView()), // Sostituisci con il nome del tuo widget "RicettarioPage"
                   );
                 },
               ),
@@ -99,42 +88,7 @@ class InserisciNuovoProdotto extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-           /* Container(
-              // autogroupmzthXPu (LJvjcdt5gzVWtb7ohQmzTH)
-              padding: EdgeInsets.fromLTRB(14.87*fem, 11*fem, 127.58*fem, 16.84*fem),
-              width: double.infinity,
-              decoration: BoxDecoration (
-                color: Color(0xb2d19266),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    // iconsaxlinearbackqQb (1:574)
-                    margin: EdgeInsets.fromLTRB(0*fem, 1*fem, 36.29*fem, 0*fem),
-                    width: 16.26*fem,
-                    height: 12.62*fem,
-                    child: Image.asset(
-                      'assets/page-1/images/iconsax-linear-back-RZ1.png',
-                      width: 16.26*fem,
-                      height: 12.62*fem,
-                    ),
-                  ),
-                  Text(
-                    // inseriscinuovoprodottovgw (1:573)
-                    'Inserisci Nuovo Prodotto',
-                    textAlign: TextAlign.center,
-                    style: SafeGoogleFont (
-                      'Baloo Bhai',
-                      fontSize: 16*ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.2575*ffem/fem,
-                      color: Color(0xffffffff),
-                    ),
-                  ),
-                ],
-              ),
-            ),*/
+
             Container(
               // autogroupvpexSfH (LJvjx8Kc6NTFjCK9ijVPEX)
               padding: EdgeInsets.fromLTRB(30*fem, 14.16*fem, 30*fem, 186*fem),
@@ -183,16 +137,6 @@ class InserisciNuovoProdotto extends StatelessWidget {
                               color: Color(0xffffffff),
                               borderRadius: BorderRadius.circular(5*fem),
                             ),
-                            /*child: Text(
-                              'Prodotto, ingrediente o alimento',
-                              style: SafeGoogleFont (
-                                'Baloo 2',
-                                fontSize: 16*ffem,
-                                fontWeight: FontWeight.w500,
-                                height: 2*ffem/fem,
-                                color: Color(0xffc7c7c7),
-                              ),
-                            ),*/
                             child: Builder(
                               builder: (context) {
                                 return TextField(
@@ -271,16 +215,6 @@ class InserisciNuovoProdotto extends StatelessWidget {
                                     color: Color(0xffffffff),
                                     borderRadius: BorderRadius.circular(5*fem),
                                   ),
-                                  /*child: Text(
-                                    'Quantità',
-                                    style: SafeGoogleFont (
-                                      'Baloo 2',
-                                      fontSize: 16*ffem,
-                                      fontWeight: FontWeight.w500,
-                                      height: 2*ffem/fem,
-                                      color: Color(0xffc7c7c7),
-                                    ),
-                                  ),*/
                                   child: Builder(
                                     builder: (context) {
                                       return TextField(

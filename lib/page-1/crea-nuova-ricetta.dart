@@ -3,10 +3,10 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
-import 'package:myapp/page-1/le-mie-ricette.dart';
-import 'package:myapp/page-1/sign-in.dart';
-import 'package:myapp/page-1/home.dart';
-import 'package:myapp/page-1/i-tuoi-prodotti.dart';
+import 'package:myapp/view/RaccolteView.dart';
+import 'package:myapp/view/RicetteView.dart';
+import 'package:myapp/view/HomeView.dart';
+import 'package:myapp/view/ProdottiView.dart';
 
 class CreaNuovaRicetta extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -44,7 +44,7 @@ class CreaNuovaRicetta extends StatelessWidget {
                   Navigator.pop(context); // Chiudi il Navigation Drawer
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Home()), // Sostituisci con il nome del tuo widget "RicettarioPage"
+                    MaterialPageRoute(builder: (context) => HomeView()), // Sostituisci con il nome del tuo widget "RicettarioPage"
                   );
                 },
               ),
@@ -56,7 +56,7 @@ class CreaNuovaRicetta extends StatelessWidget {
                   // Naviga alla pagina "I miei prodotti"
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ITuoiProdotti()), // Sostituisci con il nome del tuo widget "RicettarioPage"
+                    MaterialPageRoute(builder: (context) => ProdottiView()), // Sostituisci con il nome del tuo widget "RicettarioPage"
                   );
                 },
               ),
@@ -68,19 +68,19 @@ class CreaNuovaRicetta extends StatelessWidget {
                   // Naviga alla pagina "Ricettario"
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LeMieRicette()), // Sostituisci con il nome del tuo widget "RicettarioPage"
+                    MaterialPageRoute(builder: (context) => RicetteView()), // Sostituisci con il nome del tuo widget "RicettarioPage"
                   );
                 },
               ),
               ListTile(
-                title: Text('Accedi'),
+                title: Text('Raccolte'),
                 onTap: () {
-                  // Codice per navigare alla pagina "Accedi"
+                  // Codice per navigare alla pagina "Ricettario"
                   Navigator.pop(context); // Chiudi il Navigation Drawer
-                  // Naviga alla pagina "Sign in"
+                  // Naviga alla pagina "Ricettario"
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SignIn()), // Sostituisci con il nome del tuo widget "RicettarioPage"
+                    MaterialPageRoute(builder: (context) => RaccolteView()), // Sostituisci con il nome del tuo widget "RicettarioPage"
                   );
                 },
               ),
@@ -98,43 +98,6 @@ class CreaNuovaRicetta extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /*Container(
-              // autogroup99dzG6b (LJvsUfHEMNozLwXb5S99DZ)
-              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 18.62*fem),
-              padding: EdgeInsets.fromLTRB(13.87*fem, 13*fem, 174.08*fem, 14.84*fem),
-              width: double.infinity,
-              decoration: BoxDecoration (
-                color: Color(0xb2d19266),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    // iconsaxlinearbackwiX (5:720)
-                    margin: EdgeInsets.fromLTRB(0*fem, 1*fem, 29.79*fem, 0*fem),
-                    width: 16.26*fem,
-                    height: 12.62*fem,
-                    child: Image.asset(
-                      'assets/page-1/images/iconsax-linear-back-8du.png',
-                      width: 16.26*fem,
-                      height: 12.62*fem,
-                    ),
-                  ),
-                  Text(
-                    // creanuovaricetta2jy (5:719)
-                    'Crea Nuova Ricetta',
-                    textAlign: TextAlign.center,
-                    style: SafeGoogleFont (
-                      'Baloo Bhai',
-                      fontSize: 16*ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.2575*ffem/fem,
-                      color: Color(0xffffffff),
-                    ),
-                  ),
-                ],
-              ),
-            ),*/
             Container(
               // titolodellaricetta9pb (5:725)
               width: double.infinity,
